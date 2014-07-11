@@ -1,0 +1,33 @@
+HW4
+Discussed interpretations of question 2 with Taekwan and Vicky. 
+
+1) 
+	a) ttttttttssbb
+	b) 
+		Read	Cache Hit	0xD0
+		Read 	Cache Hit 	0x4A
+		Read 	Cache Hit 	0x46
+		Read	Cache Hit 	0x03
+		Read	Cache Miss 	unknown
+		Write	Cache Hit 	n/a 	(assuming empty line of set 3 filled by last read)
+		Write	Cache Hit 	n/a
+		Read 	Cache Miss 	unknown
+		Read	Cache Miss 	unknown (assuming LRU replacement)
+
+2)
+	We assume the tag bits are at least three bits to accommodate the largest address (0x400) for array element x[1][127].
+
+	A) 100%. Since x[0][0] starts at 0x0, then x[1][0] starts at 0x200. At the first memory access for x[0][0] we have a compulsory miss. Then at x[1][0] we have a conflict miss, since by middle-bits set indexing they map to the same set. The pattern is thus a compulsory miss for a set, followed by all conflict misses until the middle bits increment to another set. Hence thrashing.
+	B)
+	12.5% Assuming that we double the number of bytes per block (B = 16 * 2 = 32), then b = 5. since x[0][0] is at 0x0 and x[1][0] is at 0x200, then the former maps to the set 0 and the latter maps to  and fills the set 16. This resolves thrashing. Then we have one compulsory miss per block, which now holds 8 ints. Then we have 1 miss out of every 8 loads. 
+	25% assuming that we double the number of sets (S = 32 * 2 = 64), then s = 6. Then x[0][0] maps to and fills set 0 and x[0][1] maps to and fills set 32. Then we have one compulsory miss per block, and since we have 4 ints per block then we have 1 miss out of every 4 loads. 
+	C) 25%. A two-way set associative cache resolves thrashing. Hence all misses are now compulsory misses, which is 1 miss per block every time a block is loaded. Since each block holds 4 ints, then 64 blocks are loaded, hence 64 misses / 256 reads * 100 = 25%. 
+	D) No. Assuming that we increase the number of sets to accommodate the cache size increase: since all misses are now compulsory misses then we still have one miss per block regardless of the cache size. Increasing the number of sets just lets us hold more blocks simultaneously. 
+	E) Yes. Recall all misses are now compulsory misses. Increasing the block size reduces the number of times we have to load a block, hence reducing the number of compulsory misses, hence reducing the miss rate. 
+
+3) 
+	A) Weighted Average of Latency 
+	= L_BJ * F_BJ + L_ALU * (1 - F_LD - F_ST - F_BJ) + (R * H + (1- R) * M) * (F_LD + F_ST)
+
+	B) 17.63
+

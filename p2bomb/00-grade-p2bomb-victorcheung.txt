@@ -1,0 +1,30 @@
+final score: 63
+bomb109 victorcheung+svhung Wed Apr 23 15:18 valid
+    Defused:   7
+    Explosion: 3
+    Score:     63
+bomb77 victorcheung Sat Apr 19 16:48 valid
+    Defused:   0
+    Explosion: 2
+    Score:     -1
+
+###### bomb109 created: Sun Apr 20 15:42:07 2014 ######
+Sun Apr 20 15:49:08 2014: phase 1 exploded: 'sk'
+Sun Apr 20 15:49:46 2014: phase 1 exploded: 'The water'
+Sun Apr 20 16:17:48 2014: phase 1 defused: 'where'
+Sun Apr 20 16:43:55 2014: phase 1 exploded: 'giving students an outlet for exploring the wilderness'
+Sun Apr 20 18:17:22 2014: phase 1 defused: 'giving students an outlet for exploring the wilderness 54'
+Mon Apr 21 13:43:24 2014: phase 2 defused: '2 6 18 54 162 486 '
+Mon Apr 21 13:46:32 2014: phase 2 defused: '2 6 18 54 162 486'
+Mon Apr 21 14:07:10 2014: phase 3 defused: '7 v 3268'
+Mon Apr 21 14:25:39 2014: phase 4 defused: '99 3'
+Mon Apr 21 15:09:47 2014: phase 5 defused: 'bkchfm'
+Mon Apr 21 16:07:47 2014: phase 6 defused: '2 5 1 6 4 3'
+Wed Apr 23 02:03:09 2014: phase 4 defused: '99 3 hello'
+Wed Apr 23 02:22:05 2014: phase 4 defused: '99 3 9CjuQipfojy'
+Wed Apr 23 02:40:02 2014: phase 4 defused: '99 3 8BitPhoenix'
+Wed Apr 23 15:18:37 2014: phase 7 defused: '154'
+
+###### bomb77 created: Thu Apr 17 17:28:38 2014 ######
+Sat Apr 19 12:24:38 2014: phase 1 exploded: 'list'
+Sat Apr 19 16:48:48 2014: phase 1 exploded: 'where'

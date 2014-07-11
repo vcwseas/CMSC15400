@@ -1,0 +1,30 @@
+hw9
+
+1. 
+A. 200 * 100 = 20000 bytes. Each fd is 100 bytes, none of the fds are closed. 
+
+B. 0 bytes. Child exits after servicing the client; the close is only there because the child will not be listening for new connections. In any case, so long as the parent process has listenfd in its file descriptor table the associated open file entry will not be removed from the open file table. 
+
+2. 
+		Main		p0		p1
+cnt.p0		N 		Y		Y
+cnt.p1		N 		N 		Y
+i.m 		Y 		Y 		Y
+msgs.m 		Y 		Y 		Y
+myid.p0   	N 		Y 		N
+myid.p1 	N 		N 		Y
+
+3. 
+A. Thread 1: ab ac ad
+   Thread 2: dc cb db
+
+B. No.
+
+C. No. Note that the two threads both depend on a to begin. If Thread 1 runs first then Thread 2 will block until thread 1 completes. If Thread 2 runs first, note that Thread 1 never locks two semaphores in a row; hence there will never be a deadlock since Thread1 will unlock its sempaphore immediately after it's done. 
+
+4. 
+A. Tuesday
+B. 6AM
+C. Essentially the same as a Monday midnight deadline, but gives some people to work later into the night if they chose to. More flexibility for people with peculiar habits (like myself) essentially. 
+
+

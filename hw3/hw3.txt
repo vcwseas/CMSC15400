@@ -1,0 +1,41 @@
+1)
+int funcQ(int x, int y)
+{
+        return y * 3 + x;
+}
+
+int funcP(int r, int s, int t)
+{
+    if (s <= 0)
+        return t + funcQ(s, r);
+    else
+        return r + funcQ(t, s);
+}
+
+
+2)
+A.  %esi holds x (10)
+    %ecx holds n (9)
+    %eax holds result (7)
+    %edx holds mask (8)
+
+B.  mask = 3
+    result = 0
+
+C.  mask !=0
+
+D.  mask << (0xFF & n)
+
+E.  result |= (x & mask)
+
+F   1. 0
+    2. 3
+    3. != 0
+    4. mask << (0xFF & n)
+    5. |= (x & mask)
+
+
+3)
+A. &A[i][j][k] = x_a + L(i * S * T + j * T + k)
+
+B. From the assembly we get that A + 4(90i +9j + k) is stored at wherever dest is pointing, where 4 = sizeof(int). Then by the formula in part A, we know S * T = 90 and T = 9, then S = 10. Since %eax is 1440 = sizeof(A) at return, then 1440 = 4 * R * S * T. By substitution, 1440 = 4 * 10 * 9 * R. Then R = 4, S = 10, T = 9.

@@ -1,0 +1,49 @@
+hw6
+
+1. 
+	a. divideByZero() is entry 0 in the exception table.
+	b. Control starts in user mode. %eip has address 0x08001000, indicating it is the current instruction to be executed. Inside the CPU circuit, it detects that the user program is dividing by zero. It then looks in the exception table at entry 0, which was determined by the CPU manufacturers, for the address of the divideByZero() exception handler, which is 0xC0005000.  Control is then passed to the kernel and the divideByZero() handler executes. The CPU will save the return address 0x08001000, as well as other CPU states including condition codes and registers, on the kernel stack.
+
+2. 
+	a. 
+	.section .text
+	.globl  readin
+readin:
+	pushl   %ebp
+	movl    %esp, %ebp
+	pushl	%ebx                #%ebx is callee saved
+	movl	$3, %eax            #3 is the system call number for read
+	movl	$0, %ebx 	    #0 is the STDIN_FILENO
+	movl 	0x8(%ebp), %ecx     #0x8(%ebp) is void* buff
+	movl 	0xc(%ebp), %edx     #0xc(%ebp) is len
+	int 	$0x80    	    #assume return value stored in %eax
+	popl 	%ebx
+	popl    %ebp
+	ret
+
+3. 
+    a. 1 P 16 0
+       2 P 24 101
+       3 C 20 0
+       4 P 8  101
+       5 C 8  0
+       6 C 10 0
+       7 P 27 101
+    b. 1 P 16 0
+       2 P 24 101
+       3 C 20 0
+       4 C 8  0
+       5 C 10 0
+       6 P 27 101
+       The parent reaches line 26 first, at which point it waits for the child process state to change. The exception handler in the child then executes when it receives the signal, and runs in its entirety while the parent continues to wait. When the child exits (before reach line 21) the parent continues execution and exits at line 29. 
+    c. 1 P 16 0
+       2 P 24 101
+       3 C 8  0 
+       4 C 10 0
+       5 P 27 101
+       Again the race is to the handler. But this time the parent is far ahead in the race and reaches line 26 before line 20 is executed in the child. Then the child executes the entirety of the signal handler before the parent continues onto line 27. 
+    d. 1 P 16 0
+       2 C 20 0
+       3 P 8  0
+       4 P 10 0
+       Again the race is to the handler. This time the child is ahead in the race. The child reaches line 21 before the assignment (forkret = fork()) in the parent process takes place. Then the exception handler in the parent executes in entirety while the child is stuck in an infinite while loop at line 22. Since the assignment of the PID of the child to forkret in the parent hasn't yet occured, forkret remains 0. Hence the parent runs lines 10 and exits at line 11. 

@@ -1,0 +1,77 @@
+Ex1:
+
+Used
+- break multiStrlen
+- break twoFingersort
+- watch result
+- step
+- info local
+- info register
+
+Bug in multiStrlen:
+The algorithm is to increment the the pointers p and q to point at the end of the string, and by subtraction of the addresses find the length of the two strings. However the addresses are both off by one since it included the '\0' and results in a return value that's two greater than the appropriate result. Therefore we subtract one from from expressions to return the correct length for each string.
+
+Bug in twoFingersor:
+Algorithmn appears to be bubblesort; I'm not sure exactly. I just tried watching result and observed that the return value differed from the correct value in the first character. Then I observed by chance that the outermost for loop started at 1 instead of 0. I changed it to start at 0 and that fixed the problem. 
+
+
+Ex2:
+
+Used:
+- display
+- info local
+- break
+- step
+- print (char*)data4 [this prints the address of the pointer]
+- disassemble [used this to look at the movl instructions where are copying byte per byte. I could've used this to tell from where and to where I was copying values]
+
+Bug:
+Data is corrupted on line 27 where 
+Before the first occurence of corruption the local results were
+	5: data3 = "A final bit of text."
+	4: stringToPrint = "Some additional text."
+	3: data = "Xfmm-!nbzc"
+	2: data4 = "Well, maybe just a little uis to eat xl,ijtst loe  un!"
+	1: i = 200
+Afterwards the frist corruption the local results were
+	5: data3 = "A final bit of text."
+	4: stringToPrint = "Some additional text."
+	3: data = "Xf\000m-!nbzc"
+	2: data4 = "Well, maybe just a little uis to eat xl,ijtst loe  un!"
+	1: i = 200
+
+This occurs because data4[offset] reads past the end of the data4 character array and overwrites the memory locations where data is stored. 
+
+
+Ex3:
+
+1. After set up, %ebp is 0xfffd7a8 and %esp is 0xffffd7a4. Then the stack frame size is 8 bytes. But the space reserved for locals is 0 bytes.
+
+2. "topsecret"
+	We found this with two steps
+	First we examined the disassembly before the functional call
+	0x08048354 <+0>:	lea    0x4(%esp),%ecx
+   0x08048358 <+4>:	and    $0xfffffff0,%esp
+   0x0804835b <+7>:	pushl  -0x4(%ecx)
+   0x0804835e <+10>:	push   %ebp
+   0x0804835f <+11>:	mov    %esp,%ebp
+   0x08048361 <+13>:	push   %ecx
+=> 0x08048362 <+14>:	sub    $0x24,%esp
+   0x08048365 <+17>:	movl   $0xa,-0x10(%ebp)
+   0x0804836c <+24>:	mov    0x80495d0,%eax
+   0x08048371 <+29>:	mov    %eax,-0xc(%ebp)
+   0x08048374 <+32>:	mov    -0x10(%ebp),%eax
+   0x08048377 <+35>:	mov    %eax,(%esp)
+   0x0804837a <+38>:	call   0x80483a3 <c>
+
+   We realize that 0x80495d0 is an absolute address, and since we're given that we're looking for a pointer, we examine the content stored at the address 0x80495d0 as a hexadecimal with
+   (gdb) x/x 0x80495d0
+	0x80495d0 <TEMP>:	0x00000000080484b8
+	We interpret that hexademical as an address and examint the content stored as that address as a string
+	(gdb) x/s 0x00000000080484b8
+    0x80484b8:	 "topsecret"
+    Which gives "topsecret"
+
+3. break *0x0804837f
+
+4. %eax holds the function return value; %eax is 11 right after returning from the first call marked by <c> standing for function c(). 

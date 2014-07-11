@@ -1,0 +1,1 @@
+counter += result >> 30..0

@@ -1,0 +1,24 @@
+Index: trans.c
+===================================================================
+--- trans.c	(revision 15)
++++ trans.c	(working copy)
+@@ -132,7 +132,8 @@
+ {
+   int u, v, temp;
+   int *t0, *t1, *t2, *t3;
+-  bsize = 8;
++  int bsize = 8;
++  int i, j;
+   
+   for (u=0; u<N; u+=bsize) {
+     for (v=0; v<M; v+=bsize) {
+@@ -213,7 +214,8 @@
+   int u, v, temp;
+   int *tempA;
+   int *tempB;
+-  bsize = 4;
++  int bsize = 4;
++  int i, j;
+   
+   for (u=0; u<N; u+=bsize) {
+     for (v=0; v<M; v+=bsize) {

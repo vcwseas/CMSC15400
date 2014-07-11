@@ -1,0 +1,26 @@
+victorcheung hw6 grade: 48/50
+
+Graded files from svn revision 85
+
+--------------------------------------
+Question 1 points and comments: 13/15
+A) Address: 0xC0005000
+
+Graded by: Joe Ellis (ellisjoe)
+--------------------------------------
+
+Question 2 points and comments: 15/15
+Perfect!
+
+Graded by: Rachel Hwang (rah1)
+--------------------------------------
+
+Question 3 points and comments: 20/20
+Perfect!
+
+Graded by: Bob Ni (bobni)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us (the cs154 graders).
+Notify us by filling out and submitting the form here: http://goo.gl/MxrdVo

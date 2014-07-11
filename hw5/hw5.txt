@@ -1,0 +1,30 @@
+HW5
+
+1. 
+	A. It corresponds to line 4 of the C code (arr[i] += *pb).
+	B. "movl (%esi), %ecx" copies the value stored at the address in %esi to %ecx. If the address in %esi is aliased, ie. it points to an element of the array, then that element would eventually be changed, and so would *pb, in which case all elements subsequent would have a different value of *pb added. If this "optimization" were carried out then it would alter the function's behavior in the case of aliasing. 
+	C. Memory aliasing. 
+	D. Add "int pb = *pb" at line 2 before the for loop, then use pb instead of *pb for the original line 4 in C. So
+	void addto(int *arr, int *pb, int n) {
+		int i;
+		int pb = *pb;
+		for (i = 0; i < n; i++) {
+		arr[i] += pb;
+		}
+	}
+
+2. 
+	A. Systems calls use registers to store arguments, notably %esp will be overriden by the kernel and %eax stores the system call number, whereas on IA32 library function arguments are stored on the stack. System calls use a special instruction, ex int 0x80, to switch control to the kernel, whereas library functions's control flow remain with the user. 
+
+	B. man documents system calls and system call wrapped in section 2, and library functions in section 3. man distinguishes between System Calls and Library Calls on the manual pages as well. For example, for "man fopen", man specifies that fopen is from the Standard C Library and the title is also BSD Library Functions Manual. Whereas for a system call like "fork", "man fork" has the title BSD System Calls Manual.
+
+	C. Library Funtions
+		- alarm: sends the signal SIGALRM to calling process after a specified period of time.
+		- fclose: removes the association between a stream and a file. 
+		- malloc: allocates a specifed amount of memory in the heap. 
+		- sprintf: writes a string with specific format to a given chracter buffer. 
+	   System Calls
+		- fork: creates a new process as a copy of an existing one with distinct IDs
+		- brk: defines the lower boundries of the stack accessible to a process
+		- fstat: writes information about a given file description to a given memory address.
+		- shm_open: creates a file descriptor for a shared memory object. 

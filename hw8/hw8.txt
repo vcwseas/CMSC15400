@@ -1,0 +1,12 @@
+hw8
+Discussed question 1 with Vicky, Daniel and Malika. 
+
+1)
+A. Application. We consider only morse code here (not wire telegraphy). Morse code doesn’t address host identification, moving beyond network boundaries, etc.; it is more analogous to encryption, which falls under application.  
+B. Application. HTCPCP is built on HTTP, which falls under application. 
+C. Physical/Link. Avian carriers deal with host-to-host service within a metropolitan network, is compared to IEEE802.3 (wifi) and other network technologies, and a frame format is given. All of these are characteristic of the link layer. 
+D. Transport. Based on TCP, which is transport.
+E. Internetworking. Based on IPv4, which is internetworking. 
+F. Transport. LTP is a transport protocol that builds on TCP and UDP and provide features that combine the best of both (red areas, green areas, re-transmission, data integrity, etc.)
+G. Internetworking. Protocol ensures compatibility of data (intent/meaning) between different link protocols (language). 
+H. Application. Protocol governs how processes (whiteboard software) interact. 

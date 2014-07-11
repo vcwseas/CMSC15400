@@ -1,0 +1,279 @@
+/lib/ld-linux.so.2
+__gmon_start__
+libc.so.6
+_IO_stdin_used
+socket
+fflush
+strcpy
+__printf_chk
+exit
+fopen
+gai_strerror
+__isoc99_sscanf
+connect
+signal
+puts
+__stack_chk_fail
+stdin
+strtol
+fgets
+getaddrinfo
+__errno_location
+read
+__fprintf_chk
+stdout
+__memmove_chk
+strcasecmp
+__ctype_b_loc
+getenv
+stderr
+alarm
+gethostbyname
+gethostname
+fwrite
+__memcpy_chk
+close
+sleep
+__sprintf_chk
+__libc_start_main
+GLIBC_2.3
+GLIBC_2.1
+GLIBC_2.7
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.0
+PTRh
+|$(n
+|$(@	
+|$(F
+:D$/t
+\$0e
+> u<
+ [^_
+D$|1
+D$|e3
+UWVS
+<[^_]
+UWVS
+D$(e
+Erro
+r: C
+lien
+t un
+able
+ to 
+crea
+te s
+A ockef
+Erro
+r: D
+NS i
+s un
+able
+ to 
+reso
+lve 
+@ serv
+@$er a
+@(ddref
+@,ss
+Erro
+r: U
+nabl
+e to
+ con
+nect
+ to 
+the 
+B servf
+B$er
++t$<)
+Erro
+r: R
+esul
+t st
+ring
+ too
+ lar
+ge. 
+@ Incr
+@$ease
+@( SUB
+@,MITR
+@0_MAX
+@4BUF
+<*t$<-t <.t
+i< u
+<	ub
+Erro
+r: C
+lien
+t un
+able
+ to 
+writ
+e to
+B  the
+B$ ser
+B(ver
+Erro
+r: C
+lien
+t un
+able
+ to 
+read
+ fir
+B st h
+B$eade
+B(r fr
+B,om s
+B0ervef
+D$D=
+Erro
+r: C
+lien
+t un
+able
+ to 
+read
+ hea
+B ders
+B$ fro
+B(m se
+B,rver
+Erro
+r: C
+lien
+t un
+able
+ to 
+read
+ sta
+B tus 
+B$mess
+B(age 
+B,from
+B0 ser
+B4ver
+[^_]
+t$Pe
+D$<1
+Erro
+r: C
+lien
+t un
+able
+ to 
+crea
+te s
+F ockef
+D$.;n
+T$<e3
+@[^_
+UWVS
+[^_]
+%s: Error: Couldn't open %s
+Usage: %s [<input_file>]
+Phase 2 done. Keep going!
+Phase 4 passed. Try this one.
+Welcome to your cs154 "bomb". It has 6 phases, which must be
+"defused" in sequence by entering correct strings. Good luck.
+Phase 1 defused. How about the next one?
+Phase 3 cleared. Halfway there!
+Phase 5 finished. On to the next...
+The world is a canvas, cool water the paint
+Well done; you've solved the secret stage.
+%d %c %d
+nature
+It's not impossible. I used to bullseye womp rats in my T-16 back home; they're not much bigger than two meters
+These aren't the droids you're looking for
+It's the ship that made the Kessel run in less than 12 parsecs
+I thought they smelled bad on the outside!
+Size matters not. Look at me. Judge me by my size, do you?
+You like me because I'm a scoundrel.
+Help me Obi-Wan Kenobi, you're my only hope.
+lrtmonsihdecawuf
+Like tears ... 
+in rain...
+Invalid phase%s
+Initialization error (5):
+defused
+exploded
+%d:%s:%d:%s
+Error: Premature EOF on stdin
+GRADE_BOMB
+Error: Input line too long
+***truncated***
+%d %d %d %d %d %d
+%d %d %s
+9CjuQipfojy
+linux1.cs.uchicago.edu
+linux2.cs.uchicago.edu
+dani.cs.uchicago.edu
+ho-oh.cs.uchicago.edu
+machoke.cs.uchicago.edu
+machamp.cs.uchicago.edu
+bellsprout.cs.uchicago.edu
+weepinbell.cs.uchicago.edu
+victreebel.cs.uchicago.edu
+tentacool.cs.uchicago.edu
+tentacruel.cs.uchicago.edu
+geodude.cs.uchicago.edu
+graveler.cs.uchicago.edu
+golem.cs.uchicago.edu
+ponyta.cs.uchicago.edu
+rapidash.cs.uchicago.edu
+slowpoke.cs.uchicago.edu
+slowbro.cs.uchicago.edu
+magnemite.cs.uchicago.edu
+magneton.cs.uchicago.edu
+farfetchd.cs.uchicago.edu
+doduo.cs.uchicago.edu
+seel.cs.uchicago.edu
+dewgong.cs.uchicago.edu
+grimer.cs.uchicago.edu
+muk.cs.uchicago.edu
+shellder.cs.uchicago.edu
+cloyster.cs.uchicago.edu
+gastly.cs.uchicago.edu
+haunter.cs.uchicago.edu
+gengar.cs.uchicago.edu
+onix.cs.uchicago.edu
+drowzee.cs.uchicago.edu
+hypno.cs.uchicago.edu
+krabby.cs.uchicago.edu
+kingler.cs.uchicago.edu
+voltorb.cs.uchicago.edu
+electrode.cs.uchicago.edu
+exeggutor.cs.uchicago.edu
+cubone.cs.uchicago.edu
+marowak.cs.uchicago.edu
+hitmonchan.cs.uchicago.edu
+lickitung.cs.uchicago.edu
+koffing.cs.uchicago.edu
+Initialization error (1) getting host name
+Initialization error (2) getaddrinfo: %s
+Initialization error (3) no name
+Initialization error (4) machine "%s" not recognized
+ERROR: Input string is too large.
+Sorry, your bomb was not defused successfully.
+This has been recorded at
+http://bomb.cs.uchicago.edu:15213/scoreboard
+So, you've found the secret phase.
+Congratulations! You have finished the project!
+The cs154 teaching staff will verify your solution.
+Program timed out after %d seconds
+Error: Result string contains an illegal or unprintable character.
+Error: HTTP request failed with error %d: %s
+GET /%s/submitr.pl/?userid=%s&lab=%s&result=%s&submit=submit HTTP/1.0
+Error: DNS unable to resolve "%s"
+Error: Unable to connect to server %s:%d
+%%%02X
+%s %d %[a-zA-z ]
+bomb.cs.uchicago.edu
+AUTORESULT_STRING=%s
+cs154-2014
+cs154
+;*2$" 
+victorcheung

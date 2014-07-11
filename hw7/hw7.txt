@@ -1,0 +1,15 @@
+hw7
+1. 
+*assuming that the actuator head always starts on the outer cylinder (track) for each part.
+a. 0 x Tseek + 1 x Trot + 1 x Tseek + 1 x Trot = 20ms
+b. 0 x Tseek + 1 x Trot + 1 x Tseek + 1 x Trot = 20ms
+c. 1 x Tseek + 1 x Trot + 1 x Tseek + 1 x Trot = 30ms
+
+2.
+*assuming that the OS allocates 3MB for every process. 
+a. There is memory for P1; P1 will be in memory at addresses 0 - 2.  
+b. There is memory for P2; P2 will be in memory at addresses 5 - 7.
+c. There is not enough memory for P3; P3 will not be loaded. N/A for address range. 
+d. The internal fragmentation is 3MB. P1 only uses 1MB but is allocated 3MB hence contributing internal fragmentation of 2MB. P2 only uses 2MB but is allocated 3MB hence contributing internal fragmentation of 1MB. P3 is not loaded. Hence total is 3MB.
+e. External fragmentation is 3MB. Memory at addresses 3, 8 and 9 are not in use and are outside of allocated regions.  
+

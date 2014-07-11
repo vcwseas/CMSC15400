@@ -1,0 +1,26 @@
+1.
+A. 0x09     Indirect
+B. unknown  Base + Displacement - 0x212 isn't a specified address in the table, and since endianess is unknown we can't exptrapolate. 
+C. 0x54     Absolute
+D. 0x214    leal(Indexed)
+E. 0xBC     Indexed
+F. 0x42     Scaled Indexed
+G. 0x267    leal(Scaled Indexed)
+H. 0xFB     Immediate 
+I. 0x42     Scaled Indexed
+J. 0x154    leal(Base + Displacement)
+
+2.
+A. %esi     0x5
+B. %ebx     0x0
+C. 0x210    0xAA
+D. %edi     0xF7
+E. %edx     0xFFFFFFFE
+F. 0x21C    0x90
+G. %ecx     0x11C
+H. 0x214    0xBC00
+I. %eax     0x219
+J. 0x220    0x4
+
+
+

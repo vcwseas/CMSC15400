@@ -1,0 +1,18 @@
+We use, per CS:APP, sizeof(int) << 3 to find w, where w is the number of bits used to represent an int.
+
+(1)
+foo = 1 << ((sizeof(int) << 3) - 1)
+endian = ((unsigned char*) (&foo))[0]
+
+(2)
+A. !!(x ^ -1)
+
+B. !!(x ^ 0)
+
+C. !!( (x & 0XF << (((sizeof(int) << 1) - 1) << 2)) ^ (0XF << (((sizeof(int) << 1) - 1) << 2)))
+
+D. !!(x & 0XF)
+
+E. ((unsigned char *) (&x))[0] == ((unsigned char *) (&x))[sizeof(int) - 1]
+
+F. !!(x & 0x55555555)
